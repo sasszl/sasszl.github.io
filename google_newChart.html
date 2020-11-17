@@ -48,7 +48,7 @@
       $(window).resize(function() {                                                                                                     
         if (this.resizeTo)                                                                                                              
         clearTImeout(this.resizeTO);                                                                                                    
-        this.resizeTO = setTiemout(function() {                                                                                         
+        this.resizeTO = setTimeout(function() {                                                                                         
            $(this).trigger('resizeEnd');                                                                                                
         }, 25);                                                                                                                         
       });                                                                                                                               
@@ -61,7 +61,7 @@
       function drawChart()                                                                                                              
         {                                                                                                                               
            if (bar)                                                                                                                     
-               bar.draw(datam options);                                                                                                 
+               bar.draw(data, options);                                                                                                 
         }                                                                                                                               
                 
     </script>
