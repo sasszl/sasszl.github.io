@@ -44,6 +44,26 @@
             window.attachEvent("onmessage", onMessage);
            }
 
+            //create trigger to resizeEnd event                                                                                               
+      $(window).resize(function() {                                                                                                     
+        if (this.resizeTo)                                                                                                              
+        clearTImeout(this.resizeTO);                                                                                                    
+        this.resizeTO = setTiemout(function() {                                                                                         
+           $(this).trigger('resizeEnd');                                                                                                
+        }, 25);                                                                                                                         
+      });                                                                                                                               
+                                                                                                                                        
+      //redraw graph when window resize is completed                                                                                    
+      $(window).on('resizeEnd', function() {                                                                                            
+        drawChart();                                                                                                                    
+      });                                                                                                                               
+                                                                                                                                        
+      function drawChart()                                                                                                              
+        {                                                                                                                               
+           if (bar)                                                                                                                     
+               bar.draw(datam options);                                                                                                 
+        }                                                                                                                               
+                
     </script>
   </head>
   <body>
